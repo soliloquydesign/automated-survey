@@ -9,8 +9,9 @@ class SurveyLoader(object):
 
     def load_survey(self):
         new_survey = Survey(title=self.survey['title'])
-        questions = [Question(body=question['body'],
-                              kind=question['kind'])
+        questions = [Question(body=question['body']
+                              # ,kind=question['kind']
+                              )
                      for question in self.survey['questions']]
         new_survey.save()
         new_survey.question_set.add(*questions)

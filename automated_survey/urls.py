@@ -22,6 +22,11 @@ urlpatterns = [
         csrf_exempt(redirects_twilio_request_to_proper_endpoint),
         name='first_survey'),
 
+    url(r'^second-survey/',
+        csrf_exempt(redirects_twilio_request_to_proper_endpoint),
+        name='second_survey'),
+
+
     url(r'^survey/(?P<survey_id>\d+)/results$',
         show_survey_results,
         name='survey_results'),

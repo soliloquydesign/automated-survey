@@ -19,24 +19,24 @@ class Survey(models.Model):
 
 
 class Question(models.Model):
-    TEXT = 'text'
-    YES_NO = 'yes-no'
-    NUMERIC = 'numeric'
-
-    QUESTION_KIND_CHOICES = (
-        (TEXT, 'Text'),
-        (YES_NO, 'Yes or no'),
-        (NUMERIC, 'Numeric')
-    )
+    # TEXT = 'text'
+    # YES_NO = 'yes-no'
+    # NUMERIC = 'numeric'
+    #
+    # QUESTION_KIND_CHOICES = (
+    #     (TEXT, 'Text'),
+    #     (YES_NO, 'Yes or no'),
+    #     (NUMERIC, 'Numeric')
+    # )
 
     body = models.CharField(max_length=255)
-    kind = models.CharField(max_length=255, choices=QUESTION_KIND_CHOICES)
+    # kind = models.CharField(max_length=255, choices=QUESTION_KIND_CHOICES)
     survey = models.ForeignKey(Survey)
 
-    @classmethod
-    def validate_kind(cls, kind):
-        if kind not in [cls.YES_NO, cls.NUMERIC, cls.TEXT]:
-            raise ValidationError("Invalid question kind")
+    # @classmethod
+    # def validate_kind(cls, kind):
+    #     if kind not in [cls.YES_NO, cls.NUMERIC, cls.TEXT]:
+    #         raise ValidationError("Invalid question kind")
 
     def next(self):
         survey = Survey.objects.get(id=self.survey_id)
@@ -62,7 +62,7 @@ class QuestionResponse(models.Model):
     def as_dict(self):
         return {
                 'body': self.question.body,
-                'kind': self.question.kind,
+                # 'kind': self.question.kind,
                 'response': self.response,
                 'call_sid': self.call_sid,
                 'phone_number': self.phone_number,

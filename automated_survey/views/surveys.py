@@ -33,7 +33,7 @@ def show_survey(request, survey_id):
 
     first_question_url = reverse('question', kwargs=first_question_ids)
 
-    welcome = 'Hello and thank you for taking the %s survey' % survey.title
+    welcome = 'Hello! Thank you for contacting Ivy Global United, the premier advocate organization for surrogates. You are about to take the %s survey' % survey.title
     if request.is_sms:
         twiml_response = MessagingResponse()
         twiml_response.message(welcome)
@@ -49,10 +49,11 @@ def show_survey(request, survey_id):
 @require_POST
 def redirects_twilio_request_to_proper_endpoint(request):
     answering_question = request.session.get('answering_question_id')
+    #answering_question = False
     if not answering_question:
-        first_survey = Survey.objects.first()
+        second_survey = Survey.objects.all()[1]
         redirect_url = reverse('survey',
-                               kwargs={'survey_id': first_survey.id})
+                               kwargs={'survey_id': second_survey.id})
     else:
         question = Question.objects.get(id=answering_question)
         redirect_url = reverse('save_response',
@@ -63,8 +64,8 @@ def redirects_twilio_request_to_proper_endpoint(request):
 
 @require_GET
 def redirect_to_first_results(request):
-    first_survey = Survey.objects.first()
+    second_survey = Survey.objects.all()[1]
     results_for_first_survey = reverse(
         'survey_results', kwargs={
-            'survey_id': first_survey.id})
+            'survey_id': second_survey.id})
     return HttpResponseRedirect(results_for_first_survey)

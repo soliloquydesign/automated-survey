@@ -31,9 +31,9 @@ def next_question_redirect(question_id, survey_id):
 
 
 def goodbye(request):
-    goodbye_messages = ['That was the last question',
-                        'Thank you for taking this survey',
-                        'Good-bye']
+    goodbye_messages = ['That was the last question -- We have everything we need at this point!',
+                        'For further information or questions, go to www.ivyglobalunited.com',
+                        'Thank you for taking this survey\nGood-bye!']
     if request.is_sms:
         response = MessagingResponse()
         [response.message(message) for message in goodbye_messages]
