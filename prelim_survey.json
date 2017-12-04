@@ -1,64 +1,49 @@
 {
   "questions": [
     {
-      "body": "Let's get started!\nAre you single or in a relationship?\nPress 1 for Single; Press 2 for Relationship",
-      "kind": "numeric"
+      "body": "Let's get started!\nAre you single or in a relationship?\nPress 1 for Single; Press 2 for Relationship"
     },
     {
-      "body": "How interested are you in being a surrogate?\nPress 1, 2, or 3 -- 1) Kind of interested, 2) Very interested, 3) Sign me up right away!",
-      "kind": "numeric"
+      "body": "How interested are you in being a surrogate?\nPress 1, 2, or 3 -- 1) Kind of interested, 2) Very interested, 3) Sign me up right away!"
     },
     {
-      "body": "Have you been pregnant before?\nPress 1 for Yes; Press 2 for No",
-      "kind": "numeric"
+      "body": "Have you been pregnant before?\nPress 1 for Yes; Press 2 for No"
     },
     {
-      "body": "How many times have you given birth?\nPlease enter the number of pregancies",
-      "kind": "numeric"
+      "body": "How many times have you given birth?\nPlease enter the number of pregancies"
     },
     {
-      "body": "Are you a legal US resident?\nPress 1 for Yes; Press 2 for No",
-      "kind": "numeric"
+      "body": "Are you a legal US resident?\nPress 1 for Yes; Press 2 for No"
     },
     {
-      "body": "Do you smoke?\nPress 1 for Yes; Press 2 for No",
-      "kind": "numeric"
+      "body": "Do you smoke?\nPress 1 for Yes; Press 2 for No"
     },
     {
-      "body": "Do you drink alcohol frequently?\nPress 1 for Yes; Press 2 for No",
-      "kind": "numeric"
+      "body": "Do you drink alcohol frequently?\nPress 1 for Yes; Press 2 for No"
     },
     {
-      "body": "Do you use illegal drugs?\nPress 1 for Yes; Press 2 for No",
-      "kind": "numeric"
+      "body": "Do you use illegal drugs?\nPress 1 for Yes; Press 2 for No"
     },
     {
-      "body": "Have you ever been convicted of a crime?\nPress 1 for Yes; Press 2 for No",
-      "kind": "numeric"
+      "body": "Have you ever been convicted of a crime?\nPress 1 for Yes; Press 2 for No"
     },
     {
-      "body": "Almost finished, just need you to confirm some quick personal details!\nPlease type your full name",
-      "kind": "text"
+      "body": "Almost finished, just need you to confirm some quick personal details!\nPlease type your full name"
     },
     {
-      "body": "What is your email address?",
-      "kind": "text"
+      "body": "What is your email address?"
     },
     {
-      "body": "Please your 5-digit zipcode?",
-      "kind": "numeric"
+      "body": "Please your 5-digit zipcode?"
     },
     {
-      "body": "How tall are you?\nPlease use this format in your answer --> 5'9\"",
-      "kind": "text"
+      "body": "How tall are you?\nPlease use this format in your answer --> 5'9\""
     },
     {
-      "body": "How many pounds do you weigh?",
-      "kind": "numeric"
+      "body": "How many pounds do you weigh?"
     },
     {
-      "body": "All finished!\nOne of our coordinators will be evaluating your information and you should be receiving a response from us within 24 hours.\nHave a great day!",
-      "kind": "text"
+      "body": "All finished!\nOne of our coordinators will be evaluating your information and you should be receiving a response from us within 24 hours.\nHave a great day!"
     }
 
   ],

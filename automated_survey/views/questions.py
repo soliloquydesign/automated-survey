@@ -10,10 +10,10 @@ from django.views.decorators.http import require_GET
 @require_GET
 def show_question(request, survey_id, question_id):
     question = Question.objects.get(id=question_id)
-    if request.is_sms:
-        twiml = sms_question(question)
-    else:
-        twiml = voice_question(question)
+    # if request.is_sms:
+    twiml = sms_question(question)
+    # else:
+        # twiml = voice_question(question)
 
     request.session['answering_question_id'] = question.id
     return HttpResponse(twiml, content_type='application/xml')

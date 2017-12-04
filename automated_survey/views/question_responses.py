@@ -47,7 +47,7 @@ def goodbye(request):
 
 def save_response_from_request(request, question):
     session_id = request.POST['MessageSid' if request.is_sms else 'CallSid']
-    request_body = _extract_request_body(request, question.kind)
+    request_body = _extract_request_body(request)
     phone_number = request.POST['From']
 
     response = QuestionResponse.objects.filter(question_id=question.id,
@@ -63,16 +63,16 @@ def save_response_from_request(request, question):
         response.save()
 
 
-def _extract_request_body(request, question_kind):
-    Question.validate_kind(question_kind)
-
-    if request.is_sms:
-        key = 'Body'
-    elif question_kind in [Question.YES_NO, Question.NUMERIC]:
-        key = 'Digits'
-    elif 'TranscriptionText' in request.POST:
-        key = 'TranscriptionText'
-    else:
-        key = 'RecordingUrl'
+def _extract_request_body(request):
+    # Question.validate_kind(question_kind)
+    #
+    # if request.is_sms:
+    key = 'Body'
+    # elif question_kind in [Question.YES_NO, Question.NUMERIC]:
+    #     key = 'Digits'
+    # elif 'TranscriptionText' in request.POST:
+    #     key = 'TranscriptionText'
+    # else:
+    #     key = 'RecordingUrl'
 
     return request.POST.get(key)
