@@ -4,14 +4,11 @@
 
 <h1>{{ survey_title }}</h1>
 
-{% if responses|length < 1 %}
-    <p>It appears there are no responses for this survey yet!</p>
-{% endif %}
-
 <div class="col-md-8">
     <ul class="list-unstyled">
       {% for response in responses %}
-          <li><a href="{% url 'survey_detail' survey_id=7  phone=response %}">{{ response }}</a></li>
+          <li>Question: {{ response.body}}</li>
+          <li>Answer: {{ response.response }}</li>
       {% endfor %}
     </ul>
 </div>
