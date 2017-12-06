@@ -54,6 +54,7 @@ class QuestionResponse(models.Model):
     response = models.CharField(max_length=255)
     call_sid = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=255)
+    time_stamp = models.DateTimeField(auto_now_add=True)
     question = models.ForeignKey(Question)
 
     def __str__(self):
@@ -61,9 +62,11 @@ class QuestionResponse(models.Model):
 
     def as_dict(self):
         return {
+                'id': self.id,
                 'body': self.question.body,
                 # 'kind': self.question.kind,
                 'response': self.response,
                 'call_sid': self.call_sid,
                 'phone_number': self.phone_number,
+                'time_stamp': self.time_stamp
                 }

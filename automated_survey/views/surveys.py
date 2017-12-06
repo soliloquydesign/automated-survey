@@ -36,15 +36,18 @@ def show_survey_detail(request, survey_id, phone):
     survey = Survey.objects.get(id=survey_id)
     responses_to_render = [response.as_dict() for response in survey.responses]
 
-    responses_to_show = []
+    print(responses_to_render)
 
+    responses_to_show = []
     for response in responses_to_render:
         if response["phone_number"] == '+' + phone:
             responses_to_show.append(response)
 
+    sorted_responses = sorted(responses_to_show, key=lambda response: response['id'])
+
     template_context = {
         'survey_title': survey.title,
-        'responses': responses_to_show
+        'responses': sorted_responses
     }
     return render_to_response('survey_detail.html', context=template_context)
 
